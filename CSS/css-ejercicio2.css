@@ -1,0 +1,55 @@
+#titulo { 
+	color: #008484; 
+}
+
+#subtitulo { 
+	color: #0100FE; 
+}
+
+#strong-1 { 
+	color: #FE0001; 
+}
+
+.destacado{ 
+	color: #FEAE15; 
+}
+
+#primer-a{
+	color: #FE0001;
+}
+
+#em { 
+	color: #0E20D0; 
+}
+
+#especial-span { 
+	color: #9B0D89; 
+}
+
+caption { 
+	color: #2842D4; 
+}
+
+.especial, strong{
+	color: #FEAE15;
+}
+
+#adicional {
+	color: #A59F3A;
+}
+
+#red {
+	color: red;
+}
+
+#green {
+	color: #278603;
+}
+
+#segundo-a {
+	color: #278603;
+}
+
+#special, p span {
+	color: #FE03FE;
+}
