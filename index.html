@@ -1,12 +1,334 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>mmiaaffa</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <!-- libreria de css bootstrap 5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- Libreria de css de icons de bootstrap https://icons.getbootstrap.com/ -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+
+    <!-- css local para la pagina home -->
+    <link rel="stylesheet" href="./css/home.css" />
   </head>
   <body>
-    <p>Prueba</p>
-    <p>prueba2 de Estefany</p>
+    <div id="home">
+      <!-- MENU -->
+      <nav
+        id="menu"
+        class="navbar navbar-expand-lg navbar-light bg-light sticky-top"
+      >
+        <div class="container py-3">
+          <a class="navbar-brand" href="index.html">
+            <img
+              height="50"
+              src="https://upload.wikimedia.org/wikipedia/commons/2/2c/OneWeb_Logo.png"
+              alt="logo"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li v-for="m in menu" :key="m.path" class="nav-item mx-3">
+                <a
+                  class="nav-link active fs-5"
+                  aria-current="page"
+                  :href="m.path"
+                >
+                  {{m.title}}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+
+      <!-- CAROUSEL -->
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div
+            v-for="(el,index) in corousel"
+            :key="index"
+            class="carousel-item"
+            data-bs-interval="4000"
+            :class="{active:index==0}"
+          >
+            <div
+              class="imagen"
+              :style="`background-image:url(${el.img})`"
+            ></div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- SERVICIOS -->
+      <section class="container my-5 pt-5">
+        <div class="row">
+          <div v-for="service in services" :key="service.title" class="col">
+            <div class="row">
+              <div class="col-3 text-center pt-2">
+                <i class="fs-1" :class="[service.icon,service.color]"></i>
+              </div>
+              <div class="col-9">
+                <p class="fs-5">{{service.title}}</p>
+                <p class="text-muted">{{service.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--  CATEGORIAS -->
+
+      <section class="container my-5 pt-5 categories">
+        <div class="row d-flex align-items-center">
+          <div class="col-10">
+            <p class="text-primary my-0">Categorias</p>
+            <p class="fs-2">Colecciones de tendencia</p>
+          </div>
+          <div class="col-2">
+            <a
+              type="button"
+              class="btn btn-outline-primary rounded-pill"
+              href="/courses.html"
+            >
+              View All Courses
+            </a>
+          </div>
+          <div class="col-6">
+            <div
+              class="imagen imagenMain"
+              :style="`background-image:url(${categories[0].image})`"
+            >
+              <div class="content">
+                <div>
+                  <p class="fs-5 text-white">{{categories[0].title}}</p>
+                  <smal> {{categories[0].subtitle}} </smal>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="row">
+              <div
+                v-for="(ca,index) in categories.slice(1,5)"
+                :key="index"
+                class="col-6"
+              >
+                <div
+                  class="imagen"
+                  :style="`background-image:url(${ca.image})`"
+                >
+                  <div class="content">
+                    <div>
+                      <p class="fs-5 text-white">{{ca.title}}</p>
+                      <smal> {{ca.subtitle}} </smal>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CURSOS POPULARES -->
+      <section class="container my-5 py-5">
+        <div class="row flex align-items-center">
+          <div class="col-10">
+            <p class="text-primary my-0">Education</p>
+            <p class="fs-2">Cursos populares</p>
+          </div>
+          <div class="col-2">
+            <a
+              type="button"
+              class="btn btn-outline-primary rounded-pill"
+              href="/courses.html"
+            >
+              View All Courses
+            </a>
+          </div>
+
+          <div v-for="(course,index) in courses" :key="index" class="col-3">
+            <div class="card">
+              <img :src="course.image" height="180" class="card-img-top" />
+              <div class="card-body mt-2 mb-3">
+                <h5 class="card-title">{{course.name}}</h5>
+
+                <div class="mt-4 d-flex justify-content-between">
+                  <span class="badge bg-warning">{{course.rating}}</span>
+                  <span>{{course.author}}</span>
+                </div>
+                <p class="card-text"></p>
+              </div>
+              <div class="card-footer bg-white">
+                <div class="d-flex justify-content-between">
+                  <span
+                    ><i class="bi bi-people text-secondary"></i>
+                    {{course.students}}
+                  </span>
+                  <span>${{course.price}}.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ULTIMAS NOTICICAS -->
+      <section class="container my-5 py-5">
+        <div class="row flex align-items-center">
+          <div class="col-10">
+            <p class="text-primary my-0">Noticas</p>
+            <p class="fs-2">Ultimas noticias</p>
+          </div>
+          <div class="col-2">
+            <a
+              type="button"
+              class="btn btn-outline-primary rounded-pill"
+              href="/news.html"
+            >
+              Ver noticias
+            </a>
+          </div>
+
+          <div v-for="(item,index) in news" :key="index" class="col-3">
+            <div class="card">
+              <img :src="item.image" height="180" class="card-img-top" />
+
+              <div class="card-body">
+                <p><small class="text-mute mb-2">{{item.tag}}</small></p>
+                <h6 class="card-title">{{item.title}}</h6>
+
+                <div class="mt-2 d-flex justify-content-between">
+                  <small class="">
+                    <i class="bi bi-clock text-warning"></i>
+                    {{item.date}}</small
+                  >
+                </div>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FOOTER -->
+      <footer id="footer" class="bg-secondary">
+        <div class="container py-5 text-white">
+          <div class="row my-5">
+            <div class="col-4">
+              <img
+                height="60"
+                src="https://upload.wikimedia.org/wikipedia/commons/2/2c/OneWeb_Logo.png"
+                alt="logo"
+              />
+              <p class="mt-4 text-white">
+                We named our theme Studiare because to us, the best brands are
+                simple ones. Brands thrive on their ability to be understood.
+              </p>
+            </div>
+            <div class="col-4">
+              <p class="text-white fs-5 nav-link">Pages</p>
+              <div class="row pa-0 ma-0">
+                <div v-for="m in menu" :key="m.path" class="col-6">
+                  <a
+                    class="nav-link text-white fw-light"
+                    aria-current="page"
+                    :href="m.path"
+                  >
+                    {{m.title}}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <p class="text-white">Newsletter</p>
+              <p class="text-white">
+                Don’t miss anything, sign up now and keep informed about our
+                company.
+              </p>
+              <form class="d-flex">
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Enter Your E-amil"
+                  aria-label="Search"
+                />
+                <button class="btn btn-success" type="submit">Suscripbe</button>
+              </form>
+            </div>
+          </div>
+          <p class="my-0 text-white border-1 border-top pt-5 border-warning">
+            © 2021 Studiare. All rights reserved
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Libreria de JavaScript de bootstrap 5-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Libreria de JavaScript -  Vuejs 2-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- Archivo JavaScript para la pagina Home -->
+    <script src="./js/menu.js"></script>
+    <script src="./js/home.js"></script>
   </body>
 </html>
