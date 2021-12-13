@@ -8,7 +8,7 @@ new Vue({
       {
         image:
           "https://images.unsplash.com/photo-1536246026435-0cbb2a92952a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
-        name: "Introduction Web Design with HTML",
+        name: "Introducción al diseño web con HTML",
         author: "Duha Samra",
         students: 10,
         price: 24.5,
@@ -17,7 +17,7 @@ new Vue({
       {
         image:
           "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80",
-        name: "Special Education Needs Teaching",
+        name: "Enseñanza de necesidades de educación especial",
         author: "Leon Redding",
         students: 10,
         price: 24.5,
@@ -26,7 +26,7 @@ new Vue({
       {
         image:
           "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2942&q=80",
-        name: "Environmental Science BTEC Course",
+        name: "Curso de Ciencias Ambientales BTEC",
         author: "Linda Castello",
         students: 10,
         price: 24.5,
@@ -35,7 +35,7 @@ new Vue({
       {
         image:
           "https://images.unsplash.com/photo-1539632346654-dd4c3cffad8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80",
-        name: "Distance Learning MBA Management",
+        name: "Gestión de MBA a distancia",
         author: "Michael Arnett",
         students: 10,
         price: 24.5,
@@ -110,30 +110,32 @@ new Vue({
     news: [
       {
         image:
-          "https://media.istockphoto.com/photos/successful-business-man-reads-worlds-news-middle-aged-male-person-on-picture-id1285947755?b=1&k=20&m=1285947755&s=170667a&w=0&h=6UMV_5eq4lwQg34BjYJBVi1p1xP6zioSvtsFJKEAfLI=",
+          "https://images.unsplash.com/photo-1559523275-98fb3c56faf6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1713&q=80",
         tag: "Gobierno",
         title: "Consejos para desarrollar una discusión de calidad",
         date: "Junio 13, 2021",
       },
       {
         image:
-          "https://media.istockphoto.com/photos/the-whole-worlds-gone-virtual-from-work-to-school-picture-id1312357701?b=1&k=20&m=1312357701&s=170667a&w=0&h=t3P-16notU-4C58eGVUJif-FrFaWLBtAtP0OT2a5AXU=",
+          "https://images.unsplash.com/photo-1607013407627-6ee814329547?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8YWNhZGVtaWN8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60",
         tag: "Academico",
-        title: "Consejos para desarrollar una discusión de calidad",
+        title:
+          "El Ministerio de Educación podrá flexibilizar el calendario académico por la crisis",
         date: "Agosto 18, 2021",
       },
       {
         image:
           "https://images.unsplash.com/file-1635810583070-cc3f45744c3fimage",
         tag: "Diseño",
-        title: "Consejos para desarrollar una discusión de calidad",
+        title:
+          "¿Piensas estudiar diseño gráfico? Conoce las áreas donde puedes desempeñarte",
         date: "Octubre 8, 2021",
       },
       {
         image:
           "https://media.istockphoto.com/photos/successful-business-man-reads-worlds-news-middle-aged-male-person-on-picture-id1285947755?b=1&k=20&m=1285947755&s=170667a&w=0&h=6UMV_5eq4lwQg34BjYJBVi1p1xP6zioSvtsFJKEAfLI=",
         tag: "Negocio",
-        title: "Consejos para desarrollar una discusión de calidad",
+        title: "Idea de negocio: seis claves para montar una empresa de moda",
         date: "Julio 19, 2021",
       },
     ],
