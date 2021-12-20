@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Estilo-texto-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Libreria de css de icons de bootstrap https://icons.getbootstrap.com/ -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./css/menu.css" />
+    <link rel="stylesheet" href="./css/cursos.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="bg-dark">
+      <a href="index.html"
+        ><img
+          src="https://www.megaofertas.mx/img/contenido/marcas/667050710.png"
+      /></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="noticia.html">Noticias</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="reserva.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+    <main id="cursos" class="container mt-2 pt-5">
+      <nav class="navbar navbar-light">
+        <div class="container-fluid">
+          <h2>{{title}}</h2>
+          <form class="d-flex">
+            <input
+              v-model="buscadorCurso"
+              class="form-control me-2"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Buscar
+            </button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="row mt-3">
+        <div class="col-12 col-sm-3 col-md-2">
+          <h5 class="text-muted">Categorias</h5>
+          <button
+            type="button"
+            class="btn w-100 my-1"
+            :class="categoriaActivo==categoria.id?'btn-primary':'btn-light'"
+            v-for="categoria in categorias"
+            :key="categoria.id"
+            @click="seleccionarCategoria(categoria.id)"
+          >
+            <p class="d-flex my-0 text-left">
+              <small>{{categoria.nombre}}</small>
+            </p>
+          </button>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-10">
+          <div class="row">
+            <div
+              data-aos="fade-up"
+              class="col-12 col-sm-6 col-md-6 col-lg-4"
+              v-for="(curso, index) in listaCursos"
+              :key="index"
+            >
+              <a href="/curso-detalle.html" class="text-decoration-none">
+                <div class="shadow curso p-3 mb-5 bg-body rounded">
+                  <div
+                    class="imagen"
+                    :style="'background-image: url('+curso.img+')'"
+                  ></div>
+
+                  <div class="card-body">
+                    <h6 class="card-title text-dark curso-title">
+                      {{curso.nombre}}
+                    </h6>
+                    <p class="my-1">
+                      <small> {{curso.docente}} </small>
+                    </p>
+                    <p class="text-body">
+                      <small> {{curso.descripcion}} </small>
+                    </p>
+
+                    <i
+                      class="bi bi-star-fill text-warning"
+                      v-for="i in curso.calfificacion"
+                      :key="i"
+                    ></i>
+                    <i
+                      class="bi bi-star text-muted"
+                      v-for="i in (5 - curso.calfificacion)"
+                      :key="i"
+                    ></i>
+                    <p
+                      v-if="curso.gratis"
+                      class="my-0 text-success fs-5 fw-bold my-1"
+                    >
+                      GRATIS
+                    </p>
+                    <p v-else class="fs-5 text-primary fw-bold my-1">
+                      S/. {{curso.precio}}
+                    </p>
+                    <!-- <p class="card-text">{{producto.descuento}}</p> -->
+                    <a href="#" class="btn btn-success w-100 my-2">Empezar</a>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-12" v-if="listaCursos.length==0">
+            <div class="alert alert-secondary" role="alert">
+              <div>
+                <p class="text-center">
+                  <i class="bi bi-exclamation-triangle-fill me-2"></i>Curso no
+                  encontrado
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 d-flex justify-content-center my-3" v-else>
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark pt-5">
+      <!--cambia de color-->
+      <div class="container">
+        <div class="row text-white">
+          <div class="col-12 col-sm-8 col-md-3">
+            <img
+              class="img-logo"
+              height="60"
+              src="https://www.megaofertas.mx/img/contenido/marcas/667050710.png"
+              alt="logo"
+            />
+
+            <p>
+              <small class="fw-lighter">
+                EASY COURSE es una plataforma web para prepararte y tener un
+                claro conocimiento y ser el mejor en tu aprendizaje.
+              </small>
+            </p>
+            <i class="bi bi-twitter me-3"></i>
+            <i class="bi bi-facebook me-3"></i>
+            <i class="bi bi-tiktok me-3"></i>
+            <i class="bi bi-instagram me-3"></i>
+          </div>
+          <div class="col-12 col-sm-4 col-md-2">
+            <p class="fs-3 text">Páginas</p>
+
+            <p class="my-1">
+              <a class="text-decoration-none text-white" href="index.html">
+                <small class="fw-lighter"> Inicio</small></a
+              >
+            </p>
+            <p class="my-1">
+              <a class="text-decoration-none text-white" href="cursos.html">
+                <small class="fw-lighter"> Cursos</small></a
+              >
+            </p>
+            <p class="my-1">
+              <a class="text-decoration-none text-white" href="noticia.html">
+                <small class="fw-lighter"> Noticias </small></a
+              >
+            </p>
+            <p class="my-1">
+              <a class="text-decoration-none text-white" href="blog.html">
+                <small class="fw-lighter"> Blog </small></a
+              >
+            </p>
+            <p class="my-1">
+              <a class="text-decoration-none text-white" href="reserva.html">
+                <small class="fw-lighter"> Nosotros</small></a
+              >
+            </p>
+            <p class="my-1">
+              <a class="text-decoration-none text-white" href="contacto.html">
+                <small class="fw-lighter"> Contacto</small></a
+              >
+            </p>
+          </div>
+          <div class="col-12 col-sm-4 col-md-2">
+            <p class="fs-3 text">Alumnos destacados</p>
+            <p>
+              <small class="fw-lighter"> Yesica </small>
+              <br />
+              <small class="fw-lighter"> Sandra </small>
+              <br />
+              <small class="fw-lighter"> Estefany </small>
+              <br />
+              <small class="fw-lighter"> Fabian </small>
+              <br />
+              <small class="fw-lighter"> Yefersson </small>
+              <br />
+              <small class="fw-lighter"> Leonardo </small>
+            </p>
+            <p>
+              <a class="text-decoration-none text-white" href="0987 567894"
+                ><small></small
+              ></a>
+            </p>
+            <p>
+              <a href="@leenessds">@leenessds</a>
+            </p>
+          </div>
+          <div class="col-12 col-sm-8 col-md-5 d-flex justify-content-center">
+            <div class="card bg-secondary" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title fs-6 text">
+                  Regístrese para recibir el boletín
+                </h5>
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Enter Your E-amil"
+                />
+                <p>
+                  <i class="bi bi-check-circle"></i>
+                  <small>Acepto todos los términos y políticas</small>
+                </p>
+                <button type="button" class="btn btn-success">enviar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="text-white d-flex justify-content-center mt-5 py-3 bg-secondary"
+      >
+        <p class="my-0">
+          <span> © Copyright 2021 por sddd</span>
+        </p>
+      </div>
+    </footer>
+    <!-- Libreria de JavaScript de bootstrap 5-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Libreria de JavaScript -  Vuejs 2-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- Animaciones -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Archivo JavaScript para la pagina Home -->
+    <script src="./js/cursos.js"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+.imagen {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 180px;
+}
+
+.curso {
+  transition: 0.2s ease-in;
+}
+.curso:hover {
+  box-shadow: none !important;
+}
+.curso-title {
+  height: 40px;
+}

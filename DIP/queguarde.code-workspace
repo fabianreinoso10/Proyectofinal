@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "..\\HTML5-and-CSS-projects-master"
+		},
+		{
+			"path": "..\\primera_pagina_web-master"
+		},
+		{
+			"path": "..\\proyecto"
+		},
+		{
+			"path": "..\\Proyectofinal"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Prueba"
+	}
+}

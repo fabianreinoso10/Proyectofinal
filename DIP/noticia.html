@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/cssNoticia.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <title>Noticias</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Estilo-texto-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Libreria de css de icons de bootstrap https://icons.getbootstrap.com/ -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="bg-dark">
+      <a href="index.html"
+        ><img
+          src="https://www.megaofertas.mx/img/contenido/marcas/667050710.png"
+      /></a>
+      <div class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+        <ul>
+          <li><a href="cursos.html">Cursos</a></li>
+          <li><a href="noticia.html">Noticias</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="reserva.html">Nosotros</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+    <!------------  Noticias ------ -->
+    <div class="container contenedor_noticias py-5">
+      <div class="row noticias">
+        <nav class="navbar"><h1 id="h1">Noticias</h1></nav>
+        <p>
+          Entérate de nuestras últimas novedades y avances en soluciones TI para
+          el mercado.
+        </p>
+        <div class="col-md-8">
+          <div class="col-md-12 sombra" data-aos="slide-up" data-aos-duration="1000">
+            <h5>
+              <a href="#"
+                >Cómo funciona y cómo usar los operadores Spread y Rest</a
+              >
+            </h5>
+            <p>
+              En el artículo de hoy vamos a hablar de una de las características
+              de la versión ES6 (ECMAScript 2015) de JavaScript que es el
+              operador Spread así como el operador Rest.
+            </p>
+            <p id="ver"><a href="#" onclick="mostrar();">Leer más</a></p>
+            <div id="textos">
+              <p id="ver">
+                Definición y sintaxis del Spread operador El operador Spread
+                aparece como tres puntos (...) y lo que hace es tomar el grupo
+                en expresión e intentar "extenderlo" a múltiples valores. Puede
+                llevar los elementos de una matriz existente a una nueva matriz.
+                Cuando tenemos una iterable como por ejemplo una matriz con
+                múltiples valores, expande los valores de esa matriz en
+                elementos individuales. Se utiliza principalmente en la matriz
+                de variables donde se espera que haya más de un valor. var
+                variable = [...valor]; Hay básicamente 3 ocasiones en las que se
+                puede usar spread - En los literales de la matriz, en los
+                literales de los objetos y en las llamadas a funciones.
+                <a href="#" onclick="ocultar();">Ocultar</a>
+              </p>
+            </div>
+          </div>
+          <div class="col-md-12 sombra" data-aos="slide-up" data-aos-duration="1000">
+            <h5>
+              <a href="#">Python es uno de los lenguajes con más futuro</a>
+            </h5>
+            <p>
+              Los expertos de la consultora Paradigma analizan las posibilidades
+              de este lenguaje de programación y de otros muy pujantes como Go y
+              Dart
+            </p>
+            <p id="ver"><a href="#" onclick="mostrar();">Leer más</a></p>
+            <div id="textos">
+              <p id="ver">
+                Se calcula que existen unos 600 lenguajes de programación, pero
+                la mayoría de las personas apenas conoce una docena. Y, sin
+                embargo, como señalan desde la consultora tecnológica Paradigma
+                Digital, el uso de uno u otro puede tener un impacto directo en
+                el negocio de una compañía en la medida en que contribuyen a la
+                digitalización de las organizaciones y a los programadores a
+                encontrar trabajo. “Aunque de cara al exterior parecen
+                invisibles, hay lenguajes de programación que están impactando
+                en el negocio de las empresas y vemos cómo las startups se
+                decantan por lenguajes que les ayudan a acelerar el
+                time-to-market para ser más disruptivas”, señala Alberto Vara,
+                Python lead en Paradigma Digital. “Si antes no se lanzaba un
+                producto o servicio hasta que hubiera sido terminado al cien por
+                cien, en el actual entorno digital y de metodologías ágiles,
+                impera el modelo de integración continua y versiones que mejoran
+                continuamente el servicio, tal y como hacen gigantes digitales
+                como Google, Facebook o Amazon”, añade.
+                <a href="#" onclick="ocultar();">Ocultar</a>
+              </p>
+            </div>
+          </div>
+          <script type="text/javascript">
+            function mostrar() {
+              document.getElementById("textos").style.display = "block";
+            }
+            function ocultar() {
+              document.getElementById("textos").style.display = "none";
+            }
+          </script>
+          <div class="row">
+            <div class="col-md-12">
+              <nav>
+                <ul class="pagination">
+                  <li class="color_a">
+                    <a class="page-link" href="#">&laquo;</a>
+                  </li>
+                  <li class="color_a"><a class="page-link" href="#">1</a></li>
+                  <li class="color_a"><a class="page-link" href="#">2</a></li>
+                  <li class="color_a">
+                    <a class="page-link" href="#">&raquo;</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 entrada">
+          <form class="d-flex">
+            <input
+              v-model="buscadorCurso"
+              class="form-control me-2"
+              type="search"
+              placeholder="Buscar"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
+          </form><br>
+          <h4 id="hh4">Entradas recientes</h4>
+          <ul class="up">
+            <li>
+              <a href="#">Tipos de ataque DNS</a>
+              <span><i class="bi bi-calendar3"></i>10 diciembre, 2021</span><br />
+            </li>
+            <li>
+              <a href="#"
+                >¿Que es un Firewall? Tipos y donde encontrar el mejor.</a
+              >
+              <span><i class="bi bi-calendar3"></i>8 diciembre, 2021</span><br />
+            </li>
+            <li>
+              <a href="#">Ventajas de la nube híbrida</a>
+              <span><i class="bi bi-calendar3"></i>4 diciembre, 2021</span><br />
+            </li>
+          </ul>
+        </div>
+      </div>
+      <br /><br />
+      <div class="row eventos">
+        <nav class="navbar"><h1 id="h1">Eventos</h1></nav>
+        <p>Participa en nuestros proximos eventos</p>
+        <div class="row">
+          <div class="col-md-4" data-aos="slide-up" data-aos-duration="1000">
+            <div class="sombra">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7J1OlVkMA0t9BzhgzSKBXTlA6v081AA8csw&usqp=CAU"
+                alt="contacto.html"
+              /> <br>
+              <h6>
+                Charla Informativa del Curso de Programación con JavaScript
+              </h6>
+              <span><i class="bi bi-alarm"></i>18 al 20 de mayo de 2021</span><br />
+              <span><i class="bi bi-geo-alt-fill"></i>IE de Arequipa</span><br />
+              <p>
+                Te envitamos a la presentación del curso de Programación con
+                JavaScript. El evento es gratuito (Cupos limitados). Este curso
+                te sirve como base para aprender los populares framework React,
+                Angular y Vue.
+              </p>
+              <p id="ver"><a href="contacto.html">Inscripciones</a></p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="slide-up" data-aos-duration="1000">
+            <div class="sombra">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeNjc5AgOGCX9LEin9SFks1ZEXhGzBnh7buw&usqp=CAU"
+                alt="contacto.html"
+              /> <br>
+              <h6>Charla Informativa del Curso de Programación con PHP</h6>
+              <span><i class="bi bi-alarm"></i>14 al 16 de enero de 2022</span><br />
+              <span><i class="bi bi-geo-alt-fill"></i>IE de Arequipa</span><br />
+              <p>
+                ATe envitamos a la presentación del curso de Programación con
+                PHP. El evento es gratuito (Cupos limitados). Durante el evento
+                se presentará el Curso de Programación con PHP y explicaremos
+                los detalles completos del curso.
+              </p>
+              <p id="ver"><a href="contacto.html">Inscripciones</a></p>
+            </div>
+          </div>
+          <div class="col-md-4" data-aos="slide-up" data-aos-duration="1000">
+            <div class="sombra">
+              <img class="img-fluid text-center"
+                src="https://www.techspakes.com/images/angularjs-3.png"
+                alt="contacto.html"
+              /> <br>
+              <h6>Presentación de curso de AngularJS</h6>
+              <span><i class="bi bi-alarm"></i>21 al 24 de febrero de 2022</span><br />
+              <span><i class="bi bi-geo-alt-fill"></i>IE de Arequipa</span><br />
+              <p>
+                Te invitamos a venir a la presentación del curso sobre
+                programación con AngularJS. El evento es gratuito (Cupos
+                limitados). Vamos a hablar sobre Templates/Views, Directives,
+                Scope, Controllers, ng-repeat, ng-show, ng-hide, ng-click y
+                consumir APIs con $http.
+              </p>
+              <p id="ver"><a href="contacto.html">Inscripciones</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark pt-5">
+      <!--cambia de color-->
+      <div class="container">
+        <div class="row text-white">
+          <div class="col-12 col-sm-8 col-md-3">
+            <img
+              class="img-logo"
+              height="60"
+              src="https://www.megaofertas.mx/img/contenido/marcas/667050710.png"
+              alt="logo"
+            />
+
+            <p>
+              <small class="fw-lighter">
+                EASY COURSE es una plataforma web para prepararte y tener un
+                claro conocimiento y ser el mejor en tu aprendizaje.
+              </small>
+            </p>
+            <i class="bi bi-twitter me-3"></i>
+            <i class="bi bi-facebook me-3"></i>
+            <i class="bi bi-tiktok me-3"></i>
+            <i class="bi bi-instagram me-3"></i>
+          </div>
+          <div class="col-12 col-sm-4 col-md-2">
+            <p class="fs-3 text">Páginas</p>
+
+            <p class="my-1">
+              <a class="text-decoration-none text-white" href="index.html">
+                <small class="fw-lighter"> Inicio</small></a
+              >
+            </p>
+            <p class="my-1">
+              <a class="text-decoration-none text-white" href="cursos.html">
+                <small class="fw-lighter"> Cursos</small></a
+              >
+            </p>
+            <p class="my-1">
+              <a class="text-decoration-none text-white" href="noticia.html">
+                <small class="fw-lighter"> Noticias </small></a
+              >
+            </p>
+            <p class="my-1">
+              <a class="text-decoration-none text-white" href="blog.html">
+                <small class="fw-lighter"> Blog </small></a
+              >
+            </p>
+            <p class="my-1">
+              <a class="text-decoration-none text-white" href="reserva.html">
+                <small class="fw-lighter"> Nosotros</small></a
+              >
+            </p>
+            <p class="my-1">
+              <a class="text-decoration-none text-white" href="contacto.html">
+                <small class="fw-lighter"> Contacto</small></a
+              >
+            </p>
+          </div>
+          <div class="col-12 col-sm-4 col-md-2">
+            <p class="fs-3 text">Alumnos destacados</p>
+            <p>
+              <small class="fw-lighter"> Yesica </small>
+              <br />
+              <small class="fw-lighter"> Sandra </small>
+              <br />
+              <small class="fw-lighter"> Estefany </small>
+              <br />
+              <small class="fw-lighter"> Fabian </small>
+              <br />
+              <small class="fw-lighter"> Yefersson </small>
+              <br />
+              <small class="fw-lighter"> Leonardo </small>
+            </p>
+            <p>
+              <a class="text-decoration-none text-white" href="0987 567894"
+                ><small></small
+              ></a>
+            </p>
+            <p>
+              <a href="@leenessds">@leenessds</a>
+            </p>
+          </div>
+          <div class="col-12 col-sm-8 col-md-5 d-flex justify-content-center">
+            <div class="card bg-secondary" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title fs-6 text">
+                  Regístrese para recibir el boletín
+                </h5>
+                <input
+                  class="form-control me-2"
+                  type="search"
+                  placeholder="Enter Your E-amil"
+                />
+                <p>
+                  <i class="bi bi-check-circle"></i>
+                  <small>Acepto todos los términos y políticas</small>
+                </p>
+                <button type="button" class="btn btn-success">enviar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="text-white d-flex justify-content-center mt-5 py-3 bg-secondary"
+      >
+        <p class="my-0">
+          <span> © Copyright 2021 por sddd</span>
+        </p>
+      </div>
+    </footer>
+  
+  <!-- Animaciones -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+  </body>
+</html>

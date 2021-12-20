@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+}
+
+.contacto{
+    width: 100%;
+    background-color: #222529;
+    color: white;
+    font-size: 15px;
+    line-height: 1.6;
+}
+.contacto .logo {
+    text-align: center;
+    font-size: 3em;
+}
+.logo span {
+    color: #0DCAF0;
+}
+
+.caja-contacto {
+    display: grid;
+    width: 120%;
+    grid-template-columns: 200px 1fr;
+    box-shadow: 0 0 20px 0 rgba(255,255,255,.3);
+}
+
+.formulario-contacto form p {
+    margin: 0;
+    padding: 1em;
+}
+
+.formulario-contacto form .block {
+    grid-column: 2/ 3;
+}
+
+.formulario-contacto form button,
+.formulario-contacto form input,
+.formulario-contacto form textarea {
+    width: 100%;
+    padding: .7em;
+    outline: none;
+    border: none;
+    color: #fff;
+    background: none;
+    border-bottom: 1px solid #198764;
+}
+.formulario-contacto form button {
+    background: #DC3545;
+    border: none;
+    text-transform: uppercase;
+    padding: 1em;
+}
+
+.formulario-contacto form button:hover,
+.formulario-contacto form button:focus {
+    background: #dd1c1c;
+    color: black;
+    transition: 1s ease-out;
+    outline: none;
+}
+
+/* Caja Info */
+.caja-info {
+    background: #000;
+}
+.caja-info h4,
+.caja-info p {
+    text-align: center;
+    margin: 0 0 1rem 0;
+}
+
+.caja-info ul {
+    list-style: none;
+    padding:0 ;
+}
+
+ /* PANTALLAS GRANDES*/
+@media (min-width: 700px) {
+    .contacto {
+        padding: 0 25rem;
+    }
+    .caja-contacto {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .caja-contacto > *{
+        padding: 2em;
+    }
+    .caja-info h4,
+    .caja-info ul,
+    .caja-info p {
+        text-align: left;
+    }
+}
